@@ -1,0 +1,54 @@
+:root { 
+    --color-primario: #0d6efd;
+    --color-exito: #198754;
+    --fondo-claro: #98a9ff;
+    --fondo-oscuro: #001999;
+}
+
+body {
+    background-color: var(--fondo-claro);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.card {
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+#contadorUsuarios {
+    font-weight: bold;
+    color: var(--color-primario);
+}
+
+.table-responsive {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.table-dark th {
+    background-color: var(--color-primario);
+    color: white;
+}
+
+.btn {
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+footer{
+    background-color: var(--fondo-oscuro);
+    color: white;
+}

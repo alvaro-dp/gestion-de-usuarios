@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#001999">
+    <meta name="description" content="Aplicación web interactiva con asincronía y promesas que permite realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) de usuarios, mostrando además estadísticas visuales mediante **Chart.js**.
+">
+    <title>Sistema de Gestion de Usuarios mas Dashboard 📊</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container mt-5">
+        <h1 class="text-center mb-4 text-primary">Sistema de Gestion de Usuarios 📊</h1>
+
+        <!-- Panel principal -->
+        <div class="row mb-5">
+            <div class="col-md-4">
+                <div class="card shadow-sm h-100 border-primary">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Total de Usuarios</h5>
+                        <p class="card-text h2" id="contadorUsuarios">0</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Dominios de Correo</h5>
+                        <canvas id="graficoDominios"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Rangos de Edad</h5>
+                        <canvas id="graficoEdades"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- Formulario CRUD -->
+        <div class="card shadow mb-4">
+            <div class="card-header bg-primary text-white">
+                Gestión de Usuarios
+            </div>
+            <div class="card-body">
+                <form id="formularioUsuario">
+                    <input type="hidden" id="idUsuario">
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <label for="nombreUsuario" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="nombreUsuario" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="correoUsuario" class="form-label">Correo Electrónico</label>
+                            <input type="email" class="form-control" id="correoUsuario" required>
+                        </div>
+                        <div class="col-md-2">
+                            <label for="edadUsuario" class="form-label">Edad</label>
+                            <input type="number" class="form-control" id="edadUsuario" min="1" required>
+                        </div>
+                        <div class="col-md-2 d-flex align-items-end">
+                            <button type="submit" class="btn btn-success w-100" id="botonEnviar">Crear Usuario</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Tabla -->
+        <h3 class="mb-3">Lista de Usuarios</h3>
+        <div class="table-responsive">
+            <table class="table table-striped table-hover shadow-sm">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                        <th>Edad</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaUsuarios"></tbody>
+            </table>
+        </div>
+
+        <div class="text-end mt-3">
+            <button id="botonEliminarTodo" class="btn btn-danger">
+                🗑️ Eliminar Todos los Usuarios
+            </button>
+        </div>
+    </div>
+
+    <footer>
+        <a href="mailto:alvarodelaap.9@gmail.com">Contactame aqui</a>
+        <p>Copyrigth © 2025 alvaro-dp</p>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
